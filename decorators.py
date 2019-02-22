@@ -10,36 +10,44 @@ strength = {"Slayer": 10, "Witch": 4, "Whiner": 2, "Ex-Demon": 8}
 wisdom = {"Slayer": 6, "Witch": 9, "Whiner": 2, "Ex-Demon": 4}
 
 
+def heading(func):
+    def new_func(*args, **kwargs):
+        func(*args, **kwargs)
+        print()
+
+    return new_func
+
+
+@heading
 def list_characters():
     for c in data:
         print(c["name"])
-    print()
 
 
+@heading
 def list_roles():
     for c in data:
         print("%s: %s" % (c["name"], c["role"]))
-    print()
 
 
+@heading
 def list_weapons():
     for c in data:
         print("%s: %s" % (c["name"], c["weapon"]))
-    print()
 
 
+@heading
 def list_stronger():
     for c in data:
         if strength[c["role"]] > 6:
             print("%s: %s" % (c["name"], strength[c["role"]]))
-    print()
 
 
+@heading
 def list_wiser():
     for c in data:
         if wisdom[c["role"]] > 6:
             print("%s: %s" % (c["name"], wisdom[c["role"]]))
-    print()
 
 
 def main():
