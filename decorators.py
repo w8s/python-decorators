@@ -27,11 +27,13 @@ def list_weapons():
         print("%s: %s" % (c["name"], c["weapon"]))
     print()
 
+
 def list_stronger():
     for c in data:
         if strength[c["role"]] > 6:
             print("%s: %s" % (c["name"], strength[c["role"]]))
     print()
+
 
 def list_wiser():
     for c in data:
