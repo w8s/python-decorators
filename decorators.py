@@ -14,7 +14,7 @@ def heading(msg):
     def dec(func):
         def new_func(*args, **kwargs):
             print(msg)
-            print("=====")
+            print('=' * len(msg))
             func(*args, **kwargs)
             print()
 
@@ -41,14 +41,14 @@ def list_weapons():
         print("%s: %s" % (c["name"], c["weapon"]))
 
 
-@heading("Stronger than x")
+@heading("Stronger than 6")
 def list_stronger():
     for c in data:
         if strength[c["role"]] > 6:
             print("%s: %s" % (c["name"], strength[c["role"]]))
 
 
-@heading("Wiser than x")
+@heading("Wiser than 6")
 def list_wiser():
     for c in data:
         if wisdom[c["role"]] > 6:
