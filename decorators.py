@@ -42,16 +42,16 @@ def list_weapons():
 
 
 @heading("Stronger than 6")
-def list_stronger():
+def list_stronger(strength_target):
     for c in data:
-        if strength[c["role"]] > 6:
+        if strength[c["role"]] > strength_target:
             print("%s: %s" % (c["name"], strength[c["role"]]))
 
 
 @heading("Wiser than 6")
-def list_wiser():
+def list_wiser(wisdom_target):
     for c in data:
-        if wisdom[c["role"]] > 6:
+        if wisdom[c["role"]] > wisdom_target:
             print("%s: %s" % (c["name"], wisdom[c["role"]]))
 
 
@@ -59,8 +59,8 @@ def main():
     list_characters()
     list_roles()
     list_weapons()
-    list_stronger()
-    list_stronger()
+    list_stronger(6)
+    list_stronger(6)
 
 
 if __name__ == "__main__":
