@@ -63,7 +63,7 @@ def main():
     list_roles()
     list_weapons()
     list_stronger(6)
-    list_stronger(8)
+    list_wiser(8)
 
 
 if __name__ == "__main__":
