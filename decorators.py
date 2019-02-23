@@ -13,7 +13,10 @@ wisdom = {"Slayer": 6, "Witch": 9, "Whiner": 2, "Ex-Demon": 4}
 def heading(msg):
     def dec(func):
         def new_func(*args, **kwargs):
-            print(msg)
+            try:
+                print(msg % args[0])
+            except:
+                print(msg)
             print('=' * len(msg))
             func(*args, **kwargs)
             print()
@@ -41,14 +44,14 @@ def list_weapons():
         print("%s: %s" % (c["name"], c["weapon"]))
 
 
-@heading("Stronger than 6")
+@heading("Stronger than %d")
 def list_stronger(strength_target):
     for c in data:
         if strength[c["role"]] > strength_target:
             print("%s: %s" % (c["name"], strength[c["role"]]))
 
 
-@heading("Wiser than 6")
+@heading("Wiser than %d")
 def list_wiser(wisdom_target):
     for c in data:
         if wisdom[c["role"]] > wisdom_target:
@@ -60,7 +63,7 @@ def main():
     list_roles()
     list_weapons()
     list_stronger(6)
-    list_stronger(6)
+    list_stronger(8)
 
 
 if __name__ == "__main__":
